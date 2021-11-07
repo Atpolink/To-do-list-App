@@ -9,25 +9,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'To do list',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Hello Flutter ครับ"),
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("สวัสดีครับทุกคน"),
-              Text("สวัสดีครับทุกคน"),
-              Text("สวัสดีครับทุกคน")
-            ],
-          ),
-        ),
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      theme: ThemeData(primarySwatch: Colors.green),
+      home: MyHomePage(title: 'to do list'),
     );
   }
 }
+
+class Name {}
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -35,7 +26,7 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -52,11 +43,29 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Form(
               key: _formKey,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
+                  SizedBox(
+                    height: 15,
+                  ),
                   Text('Email:'),
                   TextFormField(),
+                  SizedBox(
+                    height: 15,
+                  ),
                   Text('รหัสผ่าน:'),
                   TextFormField()
+                  SizedBox(height: 15,),
+                  Row(
+                    children: <Widget>[
+                      Expanded(child: ElevatedButton(
+                        onPressed: () {
+
+                        },
+                        child: Text('ลงทะเบียน'),
+                        ),)
+                    ],
+                  )
                 ],
               ),
             )));
