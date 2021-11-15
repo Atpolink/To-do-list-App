@@ -9,25 +9,31 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('หน้าทดสอบ'),
-      ),
-      body: Center(
-        child: Container(
-          height: 80,
-          width: 150,
-          decoration: BoxDecoration(
-              color: Colors.teal[100], borderRadius: BorderRadius.circular(10)),
-          child: FlatButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: Text(
-              'ทดสอบ',
-              style: TextStyle(color: Colors.white, fontSize: 25),
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+              expandedHeight: 200.0,
+              floating: true,
+              pinned: true,
+              snap: false,
+              flexibleSpace: FlexibleSpaceBar(
+                title: Text('ทดสอบ'),
+              )),
+           SliverList(
+        delegate: SliverChildBuilderDelegate(
+          (_, int index) {
+            return ListTile(
+              leading: Container(
+                  padding: EdgeInsets.all(8),
+                  width: 100,
+                  child: Placeholder()),
+              title: Text('Place ${index + 1}', textScaleFactor: 2),
+            );
+          },
+          childCount: 20,
             ),
-          ),
-        ),
+          )
+        ],
       ),
     );
   }
