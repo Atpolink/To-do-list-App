@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:logindemo/database.dart';
+import 'birthday.dart';
 
 class apply extends StatefulWidget {
   @override
@@ -10,6 +11,7 @@ class _applyState extends State<apply> {
   @override
   final formKey = GlobalKey<FormState>();
   bool statusRedEye = true;
+  bool statusRedEye1 = true;
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -21,11 +23,13 @@ class _applyState extends State<apply> {
             padding: const EdgeInsets.only(top: 60.0),
             child: Center(
               child: Container(
-                height: 80,
-                width: 150,
-                child: Text(
-                  'สร้างบัญชี',
-                  style: TextStyle(color: Colors.teal[100], fontSize: 24),
+                //height: 80,
+                //width: 150,
+                child: Center(
+                  child: Text(
+                    'สร้างบัญชี',
+                    style: TextStyle(color: Colors.teal[100], fontSize: 24),
+                  ),
                 ),
               ),
             ),
@@ -69,16 +73,16 @@ class _applyState extends State<apply> {
                 left: 15.0, right: 15.0, top: 15, bottom: 0),
             //padding: EdgeInsets.symmetric(horizontal: 15),
             child: TextField(
-              obscureText: statusRedEye,
+              obscureText: statusRedEye1,
               decoration: InputDecoration(
                   suffixIcon: IconButton(
                       onPressed: () {
                         setState(() {
-                          statusRedEye = !statusRedEye;
+                          statusRedEye1 = !statusRedEye1;
                         });
-                        print('statusRedeye = $statusRedEye');
+                        print('statusRedeye = $statusRedEye1');
                       },
-                      icon: statusRedEye
+                      icon: statusRedEye1
                           ? Icon(Icons.remove_red_eye)
                           : Icon(Icons.remove_red_eye_outlined)),
                   border: OutlineInputBorder(),
@@ -86,16 +90,22 @@ class _applyState extends State<apply> {
                   hintText: 'ยืนยันการใส่รหัสผ่านอีกครั้ง'),
             ),
           ),
+          SizedBox(
+            height: 100,
+          ),
           Container(
+              height: 50,
+              width: 250,
               decoration: BoxDecoration(
                   color: Colors.teal[100],
-                  borderRadius: BorderRadius.circular(10)),
+                  borderRadius: BorderRadius.circular(20)),
               child: FlatButton(
                   onPressed: () {
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => birthday()));
                   },
                   child: Text(
-                    'ทดสอบ',
+                    'ถัดไป',
                     style: TextStyle(color: Colors.white, fontSize: 25),
                   )))
         ])));
