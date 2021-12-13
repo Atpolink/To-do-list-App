@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 //import 'package:logindemo/database.dart';
+import 'confirmemail.dart';
 
 class birthday extends StatefulWidget {
   @override
@@ -85,8 +86,8 @@ class _birthdayState extends State<birthday> {
                   borderRadius: BorderRadius.circular(20)),
               child: TextButton(
                 onPressed: () {
-                  Navigator.pop(context);
-                  //context, MaterialPageRoute(builder: (_) => ));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (_) => confirmemail()));
                 },
                 child: Text(
                   'ถัดไป',
