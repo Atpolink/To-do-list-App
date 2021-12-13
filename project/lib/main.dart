@@ -4,6 +4,7 @@ import 'apply.dart';
 import 'HomePage.dart';
 import 'password.dart';
 import 'database.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -26,8 +27,8 @@ class LoginDemo extends StatefulWidget {
 class _LoginDemoState extends State<LoginDemo> {
   @override
   final formKey = GlobalKey<FormState>();
-bool statusRedEye = true;
-  Profile profile =Profile();
+  bool statusRedEye = true;
+  Profile profile = Profile();
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -40,7 +41,6 @@ bool statusRedEye = true;
                 child: Container(
                     width: 300,
                     height: 200,
-                    
                     child: Image.asset('asset/images/12.jpg')),
               ),
             ),
@@ -53,33 +53,36 @@ bool statusRedEye = true;
                     border: OutlineInputBorder(),
                     labelText: 'อีเมล',
                     hintText: 'ป้อน ID อีเมลที่ถูกต้อง เช่น abc@gmail.com'),
-                    keyboardType: TextInputType.emailAddress,
-                    ),
+                keyboardType: TextInputType.emailAddress,
+              ),
             ),
             Padding(
               padding: const EdgeInsets.only(
                   left: 15.0, right: 15.0, top: 15, bottom: 0),
               //padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
-
                 obscureText: statusRedEye,
-                decoration: InputDecoration(suffixIcon: IconButton(
-                  onPressed: (){
-                     setState(() {
-                       statusRedEye = !statusRedEye;
-                     });
-                     print('statusRedeye = $statusRedEye');
-                }, icon: statusRedEye ? Icon(Icons.remove_red_eye):Icon(Icons.remove_red_eye_outlined)),
+                decoration: InputDecoration(
+                    suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            statusRedEye = !statusRedEye;
+                          });
+                          print('statusRedeye = $statusRedEye');
+                        },
+                        icon: statusRedEye
+                            ? Icon(Icons.remove_red_eye)
+                            : Icon(Icons.remove_red_eye_outlined)),
                     border: OutlineInputBorder(),
                     labelText: 'รหัสผ่าน',
                     hintText: 'ใส่รหัสผ่านที่ปลอดภัย'),
-                    ),
+              ),
             ),
-            FlatButton(
-              onPressed: (){
-                 Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => repassword()));
-               },
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => repassword()));
+              },
               child: Text(
                 'ลืมรหัสผ่าน!',
                 style: TextStyle(color: Colors.teal[100], fontSize: 19),
@@ -89,8 +92,9 @@ bool statusRedEye = true;
               height: 50,
               width: 250,
               decoration: BoxDecoration(
-                  color: Colors.teal[100], borderRadius: BorderRadius.circular(20)),
-              child: FlatButton(
+                  color: Colors.teal[100],
+                  borderRadius: BorderRadius.circular(20)),
+              child: TextButton(
                 onPressed: () {
                   Navigator.push(
                       context, MaterialPageRoute(builder: (_) => HomePage()));
@@ -98,22 +102,22 @@ bool statusRedEye = true;
                 child: Text(
                   'ล็อกอิน',
                   style: TextStyle(color: Colors.white, fontSize: 25),
-
                 ),
               ),
             ),
             SizedBox(
               height: 130,
             ),
-            FlatButton(
+            TextButton(
               onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => apply()));
-                },
-            child: Text('ผู้ใช้ใหม่? สร้างบัญชี',
-            style: TextStyle(color: Colors.teal[100],fontSize: 18)
-            ,)
-             )
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => apply()));
+              },
+              child: Text(
+                'ผู้ใช้ใหม่? สร้างบัญชี',
+                style: TextStyle(color: Colors.teal[100], fontSize: 18),
+              ),
+            ),
           ],
         ),
       ),
