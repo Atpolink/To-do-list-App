@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
+class Todolist extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<Todolist> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
           width: 150,
           decoration: BoxDecoration(
               color: Colors.teal[100], borderRadius: BorderRadius.circular(10)),
-          child: FlatButton(
+          child: TextButton(
             onPressed: () {
               Navigator.pop(context);
             },
