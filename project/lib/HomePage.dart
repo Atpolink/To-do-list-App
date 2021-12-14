@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -9,50 +11,65 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-<<<<<<< HEAD
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-              expandedHeight: 200.0,
-              floating: true,
-              pinned: true,
-              snap: false,
-              flexibleSpace: FlexibleSpaceBar(
-                title: Text('ทดสอบ'),
-              )),
-           SliverList(
-        delegate: SliverChildBuilderDelegate(
-          (_, int index) {
-            return ListTile(
-              leading: Container(
-                  padding: EdgeInsets.all(8),
-                  width: 100,
-                  child: Placeholder()),
-              title: Text('Place ${index + 1}', textScaleFactor: 2),
-            );
-          },
-          childCount: 20,
-=======
-      appBar: AppBar(
-        title: Text('หน้าทดสอบ'),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(100),
+        child: AppBar(
+          title: Text('User name'),
+          backgroundColor: Colors.greenAccent,
+        ),
       ),
-      body: Center(
-        child: Container(
-          height: 80,
-          width: 150,
-          decoration: BoxDecoration(
-              color: Colors.teal[100], borderRadius: BorderRadius.circular(10)),
-          child: TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: Text(
-              'ทดสอบ',
-              style: TextStyle(color: Colors.white, fontSize: 25),
->>>>>>> 587d372af2f72e7915f601972689ad8188abcff3
+      body: Container(
+        padding: EdgeInsets.all(20),
+        child: Row(
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  'ปฎิทิน',
+                  style: TextStyle(
+                    fontSize: 32,
+                  ),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Text(
+                  'สิ่งสำคัญ',
+                  style: TextStyle(fontSize: 32),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Text(
+                  'ที่วางแผน',
+                  style: TextStyle(fontSize: 32),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Text(
+                  'มอบหมายให้ฉัน',
+                  style: TextStyle(fontSize: 32),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Text(
+                  'งาน',
+                  style: TextStyle(fontSize: 32),
+                ),
+                SizedBox(
+                  height: 400,
+                ),
+                Text(
+                  '+ รายการใหม่',
+                  style: TextStyle(fontSize: 32),
+                ),
+              ],
             ),
-          )
-        ],
+          ],
+        ),
       ),
     );
   }
