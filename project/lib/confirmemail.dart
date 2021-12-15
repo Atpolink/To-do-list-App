@@ -13,6 +13,7 @@ class _confirmemailState extends State<confirmemail> {
     return Scaffold(
       appBar: AppBar(
         title: Text('สร้างบัญชีผู้ใช้งาน'),
+        backgroundColor: Colors.teal[100],
       ),
       body: SingleChildScrollView(
         child: Column(

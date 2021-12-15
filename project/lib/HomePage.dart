@@ -1,6 +1,7 @@
 import 'dart:html';
-
+import 'apply.dart';
 import 'package:flutter/material.dart';
+import 'settings.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,7 +16,7 @@ class _HomePageState extends State<HomePage> {
         preferredSize: Size.fromHeight(100),
         child: AppBar(
           title: Text('User name'),
-          backgroundColor: Colors.greenAccent,
+          backgroundColor: Colors.teal[100],
         ),
       ),
       body: Container(
@@ -25,47 +26,81 @@ class _HomePageState extends State<HomePage> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text(
-                  'ปฎิทิน',
-                  style: TextStyle(
-                    fontSize: 32,
-                  ),
-                ),
+                 TextButton(
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => apply()));
+              },
+              child: Text(
+                'ปฎิทิน',
+                style: TextStyle(color: Colors.black, fontSize: 32),
+              ),
+            ),
                 SizedBox(
                   height: 30,
                 ),
-                Text(
-                  'สิ่งสำคัญ',
-                  style: TextStyle(fontSize: 32),
-                ),
+                 TextButton(
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => apply()));
+              },
+              child: Text(
+                'สิ่งสำคัญ',
+                style: TextStyle(color: Colors.black, fontSize: 32),
+              ),
+            ),
                 SizedBox(
                   height: 30,
                 ),
-                Text(
-                  'ที่วางแผน',
-                  style: TextStyle(fontSize: 32),
-                ),
+                 TextButton(
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => apply()));
+              },
+              child: Text(
+                'ที่วางแผน',
+                style: TextStyle(color: Colors.black, fontSize: 32),
+              ),
+            ),
                 SizedBox(
                   height: 30,
                 ),
-                Text(
-                  'มอบหมายให้ฉัน',
-                  style: TextStyle(fontSize: 32),
-                ),
+                 TextButton(
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => apply()));
+              },
+              child: Text(
+                'หมอบหมายให้ฉัน',
+                style: TextStyle(color: Colors.black, fontSize: 32),
+              ),
+            ),
                 SizedBox(
                   height: 30,
                 ),
-                Text(
-                  'งาน',
-                  style: TextStyle(fontSize: 32),
-                ),
+                 TextButton(
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => apply()));
+              },
+              child: Text(
+                'งาน',
+                style: TextStyle(color: Colors.black, fontSize: 32),
+              ),
+            ),
                 SizedBox(
                   height: 400,
                 ),
-                Text(
-                  '+ รายการใหม่',
-                  style: TextStyle(fontSize: 32),
-                ),
+                TextButton(
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => settings()));
+              },
+              child: Text(
+                '+ รายการใหม่',
+                style: TextStyle(color: Colors.black, fontSize: 32),
+              ),
+            ),
               ],
             ),
           ],
