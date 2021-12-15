@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:logindemo/database.dart';
+//import 'package:logindemo/database.dart';
 import 'apply.dart';
 import 'HomePage.dart';
 import 'password.dart';
@@ -31,7 +31,7 @@ class _LoginDemoState extends State<LoginDemo> {
   Profile profile = Profile();
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey[100],
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[

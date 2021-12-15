@@ -12,6 +12,7 @@ class _birthdayState extends State<birthday> {
   final formKey = GlobalKey<FormState>();
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[100],
       appBar: AppBar(
         title: Text('สร้างบัญชีผู้ใช้งาน'),
       ),
@@ -25,11 +26,17 @@ class _birthdayState extends State<birthday> {
                   child: Center(
                     child: Text(
                       'วันเดือนปีเกิด',
-                      style: TextStyle(color: Colors.teal[100], fontSize: 24),
+                      style: TextStyle(
+                          color: Colors.teal[100],
+                          fontSize: 36,
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
               ),
+            ),
+            SizedBox(
+              height: 30,
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 15),
@@ -39,7 +46,7 @@ class _birthdayState extends State<birthday> {
                     border: OutlineInputBorder(),
                     labelText: 'ประเทศ',
                     hintText: 'ป้อน ประเทศที่คุณอาศัยอยู่'),
-                //keyboardType: TextInputType.emailAddress,
+                keyboardType: TextInputType.emailAddress,
               ),
             ),
             Padding(
@@ -90,7 +97,7 @@ class _birthdayState extends State<birthday> {
                       MaterialPageRoute(builder: (_) => confirmemail()));
                 },
                 child: Text(
-                  'ถัดไป',
+                  'ยืนยันการสมัคร',
                   style: TextStyle(color: Colors.white, fontSize: 25),
                 ),
               ),

@@ -14,6 +14,7 @@ class _applyState extends State<apply> {
   bool statusRedEye1 = true;
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[100],
       appBar: AppBar(
         title: Text('สร้างบัญชีผู้ใช้งาน'),
       ),
@@ -29,17 +30,33 @@ class _applyState extends State<apply> {
                   child: Center(
                     child: Text(
                       'สร้างบัญชี',
-                      style: TextStyle(color: Colors.teal[100], fontSize: 24),
+                      style: TextStyle(
+                          color: Colors.teal[100],
+                          fontSize: 36,
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
               ),
             ),
+            SizedBox(
+              height: 50,
+            ),
             Padding(
-              //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
               padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
                 key: formKey,
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Username',
+                    hintText: 'ป้อน Username ที่ต้องการป้อน'),
+                keyboardType: TextInputType.emailAddress,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                  left: 15.0, right: 15.0, top: 15, bottom: 0),
+              child: TextField(
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'E-mail',
@@ -50,7 +67,6 @@ class _applyState extends State<apply> {
             Padding(
               padding: const EdgeInsets.only(
                   left: 15.0, right: 15.0, top: 15, bottom: 0),
-              //padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
                 obscureText: statusRedEye,
                 decoration: InputDecoration(
