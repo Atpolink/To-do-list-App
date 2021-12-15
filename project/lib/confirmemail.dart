@@ -16,7 +16,7 @@ class _confirmemailState extends State<confirmemail> {
         child: Column(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(top: 60.0),
+              padding: const EdgeInsets.only(top: 250.0),
               child: Center(
                 child: Container(
                   child: Center(

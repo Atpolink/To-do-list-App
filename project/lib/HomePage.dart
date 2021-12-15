@@ -1,10 +1,12 @@
-import 'dart:html';
+import 'package:logindemo/plan.dart';
 import 'package:logindemo/work.dart';
 
 import 'apply.dart';
 import 'package:flutter/material.dart';
 import 'settings.dart';
 import 'work.dart';
+import 'plan.dart';
+import 'important.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,11 +17,24 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.teal[100],
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(100),
         child: AppBar(
           title: Text('User name'),
           backgroundColor: Colors.teal[100],
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.settings,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => settings()));
+              },
+            ),
+          ],
         ),
       ),
       body: Center(
@@ -33,8 +48,8 @@ class _HomePageState extends State<HomePage> {
                 ),
                 TextButton(
                   onPressed: () {
-                    Navigator.push(
-                        context, MaterialPageRoute(builder: (_) => apply()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => important()));
                   },
                   child: Text(
                     'สิ่งสำคัญ',
@@ -47,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                 TextButton(
                   onPressed: () {
                     Navigator.push(
-                        context, MaterialPageRoute(builder: (_) => apply()));
+                        context, MaterialPageRoute(builder: (_) => plan()));
                   },
                   child: Text(
                     'ที่วางแผน',

@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'HomePage.dart';
 
-class work extends StatefulWidget {
+class plan extends StatefulWidget {
   @override
-  _workState createState() => _workState();
+  _planState createState() => _planState();
 }
 
-class _workState extends State<work> {
+class _planState extends State<plan> {
   @override
   final formKey = GlobalKey<FormState>();
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
-        title: Text('งาน'),
+        title: Text('ที่วางแผนไว้'),
         backgroundColor: Colors.teal[100],
       ),
       body: SingleChildScrollView(
