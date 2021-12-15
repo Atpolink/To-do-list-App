@@ -4,6 +4,7 @@ import 'apply.dart';
 import 'HomePage.dart';
 import 'password.dart';
 import 'database.dart';
+import 'password.dart';
 
 void main() {
   runApp(MyApp());
@@ -27,8 +28,8 @@ class LoginDemo extends StatefulWidget {
 class _LoginDemoState extends State<LoginDemo> {
   @override
   final formKey = GlobalKey<FormState>();
+
   bool statusRedEye = true;
-  Profile profile = Profile();
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[100],
@@ -81,7 +82,7 @@ class _LoginDemoState extends State<LoginDemo> {
             TextButton(
               onPressed: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => repassword()));
+                    context, MaterialPageRoute(builder: (_) => password()));
               },
               child: Text(
                 'ลืมรหัสผ่าน!',

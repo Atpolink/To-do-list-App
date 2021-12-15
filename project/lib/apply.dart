@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-//import 'package:logindemo/database.dart';
 import 'birthday.dart';
 
 class apply extends StatefulWidget {

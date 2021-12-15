@@ -1,6 +1,5 @@
 import 'package:logindemo/plan.dart';
 import 'package:logindemo/work.dart';
-
 import 'apply.dart';
 import 'package:flutter/material.dart';
 import 'settings.dart';
@@ -17,7 +16,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.teal[100],
+      backgroundColor: Colors.grey[100],
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(100),
         child: AppBar(
