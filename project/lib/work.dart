@@ -1,6 +1,5 @@
-///import 'dart:html';
-
 import 'package:flutter/material.dart';
+import 'HomePage.dart';
 
 class work extends StatefulWidget {
   @override
@@ -12,6 +11,7 @@ class _workState extends State<work> {
   final formKey = GlobalKey<FormState>();
   Widget buid(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[100],
       appBar: AppBar(
         title: Text('งาน'),
       ),
@@ -23,10 +23,19 @@ class _workState extends State<work> {
               child: Center(
                 child: Container(
                   child: Center(
-                    child: Text(),
+                    child: Text(
+                      'อยากโยนโว้ย',
+                      style: TextStyle(
+                          color: Colors.teal[100],
+                          fontSize: 36,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
               ),
+            ),
+            SizedBox(
+              height: 50,
             ),
           ],
         ),

@@ -17,7 +17,6 @@ class _applyState extends State<apply> {
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
         title: Text('สร้างบัญชีผู้ใช้งาน'),
-        backgroundColor: Colors.teal[100],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -112,20 +111,22 @@ class _applyState extends State<apply> {
               height: 100,
             ),
             Container(
-                height: 50,
-                width: 250,
-                decoration: BoxDecoration(
-                    color: Colors.teal[100],
-                    borderRadius: BorderRadius.circular(20)),
-                child: TextButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (_) => birthday()));
-                    },
-                    child: Text(
-                      'ถัดไป',
-                      style: TextStyle(color: Colors.white, fontSize: 25),
-                    )))
+              height: 50,
+              width: 250,
+              decoration: BoxDecoration(
+                  color: Colors.teal[100],
+                  borderRadius: BorderRadius.circular(20)),
+              child: TextButton(
+                onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (_) => birthday()));
+                },
+                child: Text(
+                  'ถัดไป',
+                  style: TextStyle(color: Colors.white, fontSize: 25),
+                ),
+              ),
+            ),
           ],
         ),
       ),

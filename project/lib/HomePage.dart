@@ -1,7 +1,10 @@
 import 'dart:html';
+import 'package:logindemo/work.dart';
+
 import 'apply.dart';
 import 'package:flutter/material.dart';
 import 'settings.dart';
+import 'work.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,11 +18,11 @@ class _HomePageState extends State<HomePage> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(100),
         child: AppBar(
-           title: Text('User name'),
+          title: Text('User name'),
           backgroundColor: Colors.teal[100],
         ),
       ),
-      body:Center(
+      body: Center(
         child: Row(
           children: [
             Column(
@@ -57,7 +60,7 @@ class _HomePageState extends State<HomePage> {
                 TextButton(
                   onPressed: () {
                     Navigator.push(
-                        context, MaterialPageRoute(builder: (_) => apply()));
+                        context, MaterialPageRoute(builder: (_) => work()));
                   },
                   child: Text(
                     'งาน',
