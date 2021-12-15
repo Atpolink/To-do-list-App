@@ -1,5 +1,7 @@
 import 'apply.dart';
 import 'package:flutter/material.dart';
+import 'Account.dart';
+import 'warn.dart';
 
 class settings extends StatefulWidget {
   @override
@@ -57,19 +59,50 @@ class _settingsState extends State<settings> {
               Padding(
                 padding: const EdgeInsets.only(
                   top: 30.0,
+                  left: 10.0,
                 ),
                 child: Text(
                   'ตั้งค่าผู้ใช้',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
               TextButton(
                 onPressed: () {
-                  Navigator.pop(context);
-                  //MaterialPageRoute(builder: (_) => important()));
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (_) => account()));
                 },
                 child: Text(
-                  'สิ่งสำคัญ',
-                  style: TextStyle(color: Colors.black, fontSize: 26),
+                  'บัญชีของฉัน',
+                  style: TextStyle(color: Colors.black, fontSize: 16),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 5.0,
+                  left: 10.0,
+                ),
+                child: Text(
+                  'การตั้งค่าแอป',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 2,
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (_) => warn()));
+                },
+                child: Text(
+                  'โปรไฟล์ผู้ใช้',
+                  style: TextStyle(color: Colors.black, fontSize: 16),
                 ),
               ),
             ],
