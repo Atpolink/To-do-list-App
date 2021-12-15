@@ -43,6 +43,30 @@ class _workState extends State<work> {
                 ),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0),
+              child: Card(
+                child: ListTile(
+                  title: Text('ทำการบ้าน'),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0),
+              child: Card(
+                child: ListTile(
+                  title: Text('ส่งงานอาจารย์'),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0),
+              child: Card(
+                child: ListTile(
+                  title: Text('อ่านหนังสือ'),
+                ),
+              ),
+            ),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,

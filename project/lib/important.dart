@@ -7,6 +7,14 @@ class important extends StatefulWidget {
 }
 
 class _importantState extends State<important> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
   @override
   final formKey = GlobalKey<FormState>();
   Widget build(BuildContext context) {
@@ -25,7 +33,7 @@ class _importantState extends State<important> {
                 child: Container(
                   child: Center(
                     child: Text(
-                      '',
+                      'ลองเทส',
                       style: TextStyle(
                           color: Colors.teal[100],
                           fontSize: 36,
@@ -35,8 +43,41 @@ class _importantState extends State<important> {
                 ),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0),
+              child: Card(
+                child: ListTile(
+                  title: Text('ส่งงานอาจารย์วันพุทธ'),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0),
+              child: Card(
+                child: ListTile(
+                  title: Text('นัดประชุมงานโครงการระดับโลก'),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0),
+              child: Card(
+                child: ListTile(
+                  title: Text('ซ่อมรถ'),
+                ),
+              ),
+            ),
+            Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.headline4,
+            ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: const Icon(Icons.add),
       ),
     );
   }

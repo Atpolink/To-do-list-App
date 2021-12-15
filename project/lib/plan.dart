@@ -7,6 +7,14 @@ class plan extends StatefulWidget {
 }
 
 class _planState extends State<plan> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
   @override
   final formKey = GlobalKey<FormState>();
   Widget build(BuildContext context) {
@@ -25,7 +33,7 @@ class _planState extends State<plan> {
                 child: Container(
                   child: Center(
                     child: Text(
-                      '',
+                      'ลองเทส',
                       style: TextStyle(
                           color: Colors.teal[100],
                           fontSize: 36,
@@ -35,8 +43,41 @@ class _planState extends State<plan> {
                 ),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0),
+              child: Card(
+                child: ListTile(
+                  title: Text('นัดประชุม'),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0),
+              child: Card(
+                child: ListTile(
+                  title: Text('ซื้อกับข้าว'),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0),
+              child: Card(
+                child: ListTile(
+                  title: Text('นัดอ่านหนังสือ'),
+                ),
+              ),
+            ),
+            Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.headline4,
+            ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: const Icon(Icons.add),
       ),
     );
   }
