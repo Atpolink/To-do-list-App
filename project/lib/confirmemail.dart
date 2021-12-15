@@ -11,7 +11,14 @@ class _confirmemailState extends State<confirmemail> {
   final formKey = GlobalKey<FormState>();
   Widget build(BuildContext context) {
     return Scaffold(
+<<<<<<< HEAD
       backgroundColor: Colors.grey[100],
+=======
+      appBar: AppBar(
+        title: Text('สร้างบัญชีผู้ใช้งาน'),
+        backgroundColor: Colors.teal[100],
+      ),
+>>>>>>> 70f9010e1b45024116978d4ff1c647bdf4bf7093
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[

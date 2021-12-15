@@ -15,7 +15,8 @@ class _birthdayState extends State<birthday> {
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
         title: Text('สร้างบัญชีผู้ใช้งาน'),
-      ),
+        backgroundColor: Colors.teal[100],
+         ),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
