@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:logindemo/%E0%B8%B4beta.dart';
+import 'package:logindemo/beta2.dart';
+import 'package:logindemo/beta3.dart';
+import 'package:logindemo/password.dart';
 import 'HomePage.dart';
 import 'important.dart';
 
@@ -13,6 +17,7 @@ class _accountState extends State<account> {
     return Scaffold(
         appBar: AppBar(
           title: Text('บัญชีของฉัน'),
+          backgroundColor: Colors.teal[100],
         ),
         body: Container(
             padding: EdgeInsets.all(20),
@@ -20,48 +25,53 @@ class _accountState extends State<account> {
               Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(
-                      'ข้อมูลบัญชี',
-                      style: TextStyle(color: Colors.black, fontSize: 36),
-                    ),
                     TextButton(
                       onPressed: () {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => important()));
+                            MaterialPageRoute(builder: (_) => beta()));
                       },
                       child: Text(
-                        '     ชื่อผู้ใช้',
-                        style: TextStyle(color: Colors.black, fontSize: 20),
+                        '     ชื่อ',
+                        style: TextStyle(color: Colors.black, fontSize: 32),
                       ),
                     ),
+                     SizedBox(
+                  height: 30,
+                ),
                     TextButton(
                       onPressed: () {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => important()));
+                            MaterialPageRoute(builder: (_) => beta2()));
                       },
                       child: Text(
                         '     เปลี่ยนอีเมล',
-                        style: TextStyle(color: Colors.black, fontSize: 20),
+                        style: TextStyle(color: Colors.black, fontSize: 32),
                       ),
                     ),
+                     SizedBox(
+                  height: 30,
+                ),
                     TextButton(
                       onPressed: () {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => important()));
+                            MaterialPageRoute(builder: (_) => password()));
                       },
                       child: Text(
                         '     เปลี่ยนรหัสผ่าน',
-                        style: TextStyle(color: Colors.black, fontSize: 20),
+                        style: TextStyle(color: Colors.black, fontSize: 32),
                       ),
                     ),
+                     SizedBox(
+                  height: 30,
+                ),
                     TextButton(
                       onPressed: () {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => important()));
+                            MaterialPageRoute(builder: (_) => beta3()));
                       },
                       child: Text(
                         '     ลบบัญชี',
-                        style: TextStyle(color: Colors.red, fontSize: 20),
+                        style: TextStyle(color: Colors.red, fontSize: 40),
                       ),
                     ),
                   ])

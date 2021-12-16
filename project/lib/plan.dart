@@ -8,6 +8,15 @@ class plan extends StatefulWidget {
 
 class _planState extends State<plan> {
   int _counter = 0;
+  List todos = List();
+  String input = "";
+  @override
+  void initState() {
+    super.initState();
+    todos.add("ทำงานบ้าน");
+    todos.add("ไปตลาด");
+    
+  }
 
   void _incrementCounter() {
     setState(() {
@@ -24,61 +33,60 @@ class _planState extends State<plan> {
         title: Text('ที่วางแผนไว้'),
         backgroundColor: Colors.teal[100],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top: 60.0),
-              child: Center(
-                child: Container(
-                  child: Center(
-                    child: Text(
-                      'ลองเทส',
-                      style: TextStyle(
-                          color: Colors.teal[100],
-                          fontSize: 36,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 20.0),
-              child: Card(
-                child: ListTile(
-                  title: Text('นัดประชุม'),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 20.0),
-              child: Card(
-                child: ListTile(
-                  title: Text('ซื้อกับข้าว'),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 20.0),
-              child: Card(
-                child: ListTile(
-                  title: Text('นัดอ่านหนังสือ'),
-                ),
-              ),
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  shape: RoundedRectangleBorder(borderRadius: 
+                  BorderRadius.circular(8)),
+                    title: Text("เพิ่มรายการ"),
+                    content: TextField(onChanged: (String value) {
+                      input = value;
+                    }),
+                    actions: <Widget>[
+                      FlatButton(
+                          onPressed: () {
+                            setState(() {
+                              todos.add(input);
+                            });
+                            Navigator.of(context).pop();
+                          },
+                          child: Text("เพิ่ม"))
+                    ]);
+              });
+        },
+        child: Icon(
+          Icons.add,
+          color: Colors.white,
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      body: ListView.builder(
+          itemCount: todos.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Dismissible(
+                key: Key(todos[index]),
+                child: Card(
+                  elevation: 4,
+                  margin: EdgeInsets.all(8),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8)),
+                  child: ListTile(
+                    title: Text(todos[index]),
+                    trailing: IconButton(
+                        icon: Icon(
+                          Icons.delete,
+                          color: Colors.red,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            todos.removeAt(index);
+                          });
+                        }),
+                  ),
+                ));
+          }),
     );
   }
 }

@@ -4,8 +4,7 @@ import 'apply.dart';
 import 'HomePage.dart';
 import 'password.dart';
 import 'database.dart';
-import 'password.dart';
-
+import 'package:logindemo/database.dart';
 void main() {
   runApp(MyApp());
 }
@@ -28,11 +27,11 @@ class LoginDemo extends StatefulWidget {
 class _LoginDemoState extends State<LoginDemo> {
   @override
   final formKey = GlobalKey<FormState>();
-
   bool statusRedEye = true;
+  Profile profile = Profile();
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -55,6 +54,7 @@ class _LoginDemoState extends State<LoginDemo> {
                     labelText: 'อีเมล',
                     hintText: 'ป้อน ID อีเมลที่ถูกต้อง เช่น abc@gmail.com'),
                 keyboardType: TextInputType.emailAddress,
+               
               ),
             ),
             Padding(
@@ -79,6 +79,9 @@ class _LoginDemoState extends State<LoginDemo> {
                     hintText: 'ใส่รหัสผ่านที่ปลอดภัย'),
               ),
             ),
+             SizedBox(
+                  height: 20,
+                ),
             TextButton(
               onPressed: () {
                 Navigator.push(
@@ -89,6 +92,9 @@ class _LoginDemoState extends State<LoginDemo> {
                 style: TextStyle(color: Colors.teal[100], fontSize: 19),
               ),
             ),
+             SizedBox(
+                  height: 30,
+                ),
             Container(
               height: 50,
               width: 250,
