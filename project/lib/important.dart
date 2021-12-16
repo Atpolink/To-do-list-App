@@ -9,6 +9,16 @@ class important extends StatefulWidget {
 class _importantState extends State<important> {
   int _counter = 0;
 
+  List todos = List();
+  String input = "";
+  @override
+  void initState() {
+    super.initState();
+    todos.add("ส่งงาน");
+    todos.add("จ่ายค่าหอ");
+    todos.add("เตรียมของขวัญวันปีใหม่");
+  }
+
   void _incrementCounter() {
     setState(() {
       _counter++;
@@ -21,64 +31,63 @@ class _importantState extends State<important> {
     return Scaffold(
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
-        title: Text('สิ่งสำคัญ'),
+        title: Text('ที่วางแผนไว้'),
         backgroundColor: Colors.teal[100],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top: 60.0),
-              child: Center(
-                child: Container(
-                  child: Center(
-                    child: Text(
-                      'ลองเทส',
-                      style: TextStyle(
-                          color: Colors.teal[100],
-                          fontSize: 36,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 20.0),
-              child: Card(
-                child: ListTile(
-                  title: Text('ส่งงานอาจารย์วันพุทธ'),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 20.0),
-              child: Card(
-                child: ListTile(
-                  title: Text('นัดประชุมงานโครงการระดับโลก'),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 20.0),
-              child: Card(
-                child: ListTile(
-                  title: Text('ซ่อมรถ'),
-                ),
-              ),
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8)),
+                    title: Text("เพิ่มรายการ"),
+                    content: TextField(onChanged: (String value) {
+                      input = value;
+                    }),
+                    actions: <Widget>[
+                      FlatButton(
+                          onPressed: () {
+                            setState(() {
+                              todos.add(input);
+                            });
+                            Navigator.of(context).pop();
+                          },
+                          child: Text("เพิ่ม"))
+                    ]);
+              });
+        },
+        child: Icon(
+          Icons.add,
+          color: Colors.white,
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      body: ListView.builder(
+          itemCount: todos.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Dismissible(
+                key: Key(todos[index]),
+                child: Card(
+                  elevation: 4,
+                  margin: EdgeInsets.all(8),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8)),
+                  child: ListTile(
+                    title: Text(todos[index]),
+                    trailing: IconButton(
+                        icon: Icon(
+                          Icons.delete,
+                          color: Colors.red,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            todos.removeAt(index);
+                          });
+                        }),
+                  ),
+                ));
+          }),
     );
   }
 }

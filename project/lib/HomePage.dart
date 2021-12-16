@@ -1,5 +1,8 @@
+import 'package:logindemo/Account.dart';
 import 'package:logindemo/plan.dart';
+import 'package:logindemo/warn.dart';
 import 'package:logindemo/work.dart';
+
 import 'apply.dart';
 import 'package:flutter/material.dart';
 import 'settings.dart';
@@ -16,11 +19,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: Colors.white,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100),
+        preferredSize: Size.fromHeight(50),
         child: AppBar(
-          title: Text('User name'),
+          title: Text('Homepage'),
           backgroundColor: Colors.teal[100],
           actions: <Widget>[
             IconButton(
@@ -51,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                         MaterialPageRoute(builder: (_) => important()));
                   },
                   child: Text(
-                    'สิ่งสำคัญ',
+                    '   -สิ่งสำคัญ',
                     style: TextStyle(color: Colors.black, fontSize: 32),
                   ),
                 ),
@@ -64,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                         context, MaterialPageRoute(builder: (_) => plan()));
                   },
                   child: Text(
-                    'ที่วางแผน',
+                    '   -ที่วางแผน',
                     style: TextStyle(color: Colors.black, fontSize: 32),
                   ),
                 ),
@@ -77,7 +80,7 @@ class _HomePageState extends State<HomePage> {
                         context, MaterialPageRoute(builder: (_) => work()));
                   },
                   child: Text(
-                    'งาน',
+                    '   -งาน',
                     style: TextStyle(color: Colors.black, fontSize: 32),
                   ),
                 ),
